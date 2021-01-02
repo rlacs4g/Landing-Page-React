@@ -1,24 +1,33 @@
 import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+//import .js files
+import NavBar from "./navbar.js";
+import Jumbo from "./jumbo.js";
+import Card from "./card.js";
+import Footer from "./footer.js";
 
 //create your first component
 export function Home() {
+	const menu = [
+		{ label: "Home ", url: "/", class: "nav-link active" },
+		{ label: "About ", url: "#", class: "nav-link" },
+		{ label: "Services ", url: "/", class: "nav-link" },
+		{ label: "Contact ", url: "#", class: "nav-link" }
+	];
+
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div>
+			<div>
+				<NavBar menu={menu} brand="Start BootStrap" />
+			</div>
+			<div className="mt-5">
+				<Jumbo name="Hello" />
+			</div>
+			<div>
+				<Card />
+			</div>
+			<footer>
+				<Footer />
+			</footer>
 		</div>
 	);
 }
